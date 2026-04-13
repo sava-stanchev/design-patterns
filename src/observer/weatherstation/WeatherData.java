@@ -5,8 +5,14 @@ public class WeatherData {
     private float humidity;
     private float pressure;
 
+    private CurrentConditionsDisplay currentConditionsDisplay;
+
+    public WeatherData(CurrentConditionsDisplay currentConditionsDisplay) {
+        this.currentConditionsDisplay = currentConditionsDisplay;
+    }
+
     public void measurementsChanged() {
-        System.out.println("Measurements changed!");
+        currentConditionsDisplay.update(temperature, humidity, pressure);
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {
