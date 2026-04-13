@@ -1,18 +1,38 @@
 package observer.weatherstation;
 
-public class WeatherData {
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeatherData implements Subject {
+    private final List<Observer> observers;
+
     private float temperature;
     private float humidity;
     private float pressure;
 
-    private CurrentConditionsDisplay currentConditionsDisplay;
+    public WeatherData() {
+        observers = new ArrayList<>();
+    }
 
-    public WeatherData(CurrentConditionsDisplay currentConditionsDisplay) {
-        this.currentConditionsDisplay = currentConditionsDisplay;
+    @Override
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
+    }
+
+    @Override
+    public void removeObserver(Observer observer) {
+        observers.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observers) {
+            observer.update(temperature, humidity, pressure);
+        }
     }
 
     public void measurementsChanged() {
-        currentConditionsDisplay.update(temperature, humidity, pressure);
+        notifyObservers();
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {
