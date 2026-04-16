@@ -1,8 +1,6 @@
 package decorator.starbuzz;
 
 public class Mocha extends CondimentDecorator {
-    Beverage beverage;
-
     public Mocha(Beverage beverage) {
         this.beverage = beverage;
     }
@@ -14,6 +12,10 @@ public class Mocha extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + 0.20;
+        return switch (getSize()) {
+            case TALL -> beverage.cost() + 0.15;
+            case GRANDE -> beverage.cost() + 0.20;
+            case VENTI -> beverage.cost() + 0.25;
+        };
     }
 }

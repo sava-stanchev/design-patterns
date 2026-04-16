@@ -1,8 +1,6 @@
 package decorator.starbuzz;
 
 public class Soy extends CondimentDecorator {
-    Beverage beverage;
-
     public Soy(Beverage beverage) {
         this.beverage = beverage;
     }
@@ -14,6 +12,10 @@ public class Soy extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + 0.15;
+        return switch (getSize()) {
+            case TALL -> beverage.cost() + 0.10;
+            case GRANDE -> beverage.cost() + 0.15;
+            case VENTI -> beverage.cost() + 0.20;
+        };
     }
 }
