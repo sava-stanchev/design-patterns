@@ -1,6 +1,4 @@
-package factory.pizzastore.ingredients.ny;
-
-import factory.pizzastore.ingredients.Pepperoni;
+package factory.pizzastore.ingredients;
 
 public class SlicedPepperoni implements Pepperoni {
     public String toString() {
