@@ -2,16 +2,12 @@ package factory.pizzastore;
 
 public class Main {
     public static void main(String[] args) {
-        PizzaFactory nyFactory = new NYPizzaFactory();
-        PizzaStore nyStore = new PizzaStore(nyFactory);
-
+        PizzaStore nyStore = new NYPizzaStore();
         Pizza nyPizza = nyStore.orderPizza("veggie");
         System.out.println("Ordered a " + nyPizza.getName());
         System.out.println();
 
-        PizzaFactory chicagoFactory = new ChicagoPizzaFactory();
-        PizzaStore chicagoStore = new PizzaStore(chicagoFactory);
-
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
         Pizza chicagoPizza = chicagoStore.orderPizza("veggie");
         System.out.println("Ordered a " + chicagoPizza.getName());
     }

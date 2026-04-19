@@ -1,8 +1,9 @@
 package factory.pizzastore;
 
-public class ChicagoPizzaFactory implements PizzaFactory {
+public class ChicagoPizzaStore extends PizzaStore {
     @Override
-    public Pizza createPizza(String type) {
+    protected Pizza createPizza(String type) {
+
         if (type.equalsIgnoreCase("cheese")) {
             return new ChicagoStyleCheesePizza();
         } else if (type.equalsIgnoreCase("veggie")) {
