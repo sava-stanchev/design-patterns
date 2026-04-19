@@ -1,9 +1,9 @@
 package factory.pizzastore;
 
 public class PizzaStore {
-    SimplePizzaFactory factory;
+    PizzaFactory factory;
 
-    public PizzaStore(SimplePizzaFactory factory) {
+    public PizzaStore(PizzaFactory factory) {
         this.factory = factory;
     }
 
