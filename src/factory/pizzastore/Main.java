@@ -10,5 +10,8 @@ public class Main {
         PizzaStore chicagoStore = new ChicagoPizzaStore();
         Pizza chicagoPizza = chicagoStore.orderPizza("veggie");
         System.out.println("Ordered a " + chicagoPizza.getName());
+        System.out.println();
+        Pizza chicagoPepperoni = chicagoStore.orderPizza("pepperoni");
+        System.out.println("Ordered a " + chicagoPepperoni.getName());
     }
 }
