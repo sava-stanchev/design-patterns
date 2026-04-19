@@ -1,15 +1,21 @@
 package factory.pizzastore;
 
-public class ChicagoStyleVeggiePizza extends Pizza {
-    public ChicagoStyleVeggiePizza() {
-        name = "Chicago Style Deep Dish Veggie Pizza";
-        dough = "Extra Thick Crust Dough";
-        sauce = "Plum Tomato Sauce";
+import factory.pizzastore.ingredients.*;
 
-        toppings.add("Shredded Mozzarella Cheese");
-        toppings.add("Black Olives");
-        toppings.add("Spinach");
-        toppings.add("Eggplant");
+public class ChicagoStyleVeggiePizza extends Pizza {
+    PizzaIngredientFactory ingredientFactory;
+
+    public ChicagoStyleVeggiePizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
+    }
+
+    @Override
+    void prepare() {
+        System.out.println("Preparing " + name);
+
+        dough = ingredientFactory.createDough();
+        sauce = ingredientFactory.createSauce();
+        veggies = ingredientFactory.createVeggies();
     }
 
     @Override
