@@ -8,10 +8,11 @@ public class NYPizzaStore extends PizzaStore {
                 new NYPizzaIngredientFactory();
 
         if (type.equalsIgnoreCase("cheese")) {
-            pizza = new NYStyleCheesePizza(ingredientFactory);
+            pizza = new CheesePizza(ingredientFactory);
             pizza.name = "NY Style Cheese Pizza";
+
         } else if (type.equalsIgnoreCase("veggie")) {
-            pizza = new NYStyleVeggiePizza(ingredientFactory);
+            pizza = new VeggiePizza(ingredientFactory);
             pizza.name = "NY Style Veggie Pizza";
         }
 

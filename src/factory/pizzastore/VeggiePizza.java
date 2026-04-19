@@ -2,12 +2,12 @@ package factory.pizzastore;
 
 import factory.pizzastore.ingredients.*;
 
-public class NYStyleCheesePizza extends Pizza {
+public class VeggiePizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
 
-    public NYStyleCheesePizza(PizzaIngredientFactory ingredientFactory) {
+    public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
-        name = "NY Style Cheese Pizza";
+        name = "Veggie Pizza";
     }
 
     @Override
@@ -16,6 +16,6 @@ public class NYStyleCheesePizza extends Pizza {
 
         dough = ingredientFactory.createDough();
         sauce = ingredientFactory.createSauce();
-        cheese = ingredientFactory.createCheese();
+        veggies = ingredientFactory.createVeggies();
     }
 }

@@ -2,11 +2,12 @@ package factory.pizzastore;
 
 import factory.pizzastore.ingredients.*;
 
-public class ChicagoStyleVeggiePizza extends Pizza {
+public class CheesePizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
 
-    public ChicagoStyleVeggiePizza(PizzaIngredientFactory ingredientFactory) {
+    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
+        name = "Cheese Pizza";
     }
 
     @Override
@@ -15,11 +16,6 @@ public class ChicagoStyleVeggiePizza extends Pizza {
 
         dough = ingredientFactory.createDough();
         sauce = ingredientFactory.createSauce();
-        veggies = ingredientFactory.createVeggies();
-    }
-
-    @Override
-    void cut() {
-        System.out.println("Cutting the pizza into square slices");
+        cheese = ingredientFactory.createCheese();
     }
 }

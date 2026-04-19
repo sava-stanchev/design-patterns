@@ -8,10 +8,11 @@ public class ChicagoPizzaStore extends PizzaStore {
                 new ChicagoPizzaIngredientFactory();
 
         if (type.equalsIgnoreCase("cheese")) {
-            pizza = new ChicagoStyleCheesePizza(ingredientFactory);
+            pizza = new CheesePizza(ingredientFactory);
             pizza.name = "Chicago Style Cheese Pizza";
+
         } else if (type.equalsIgnoreCase("veggie")) {
-            pizza = new ChicagoStyleVeggiePizza(ingredientFactory);
+            pizza = new VeggiePizza(ingredientFactory);
             pizza.name = "Chicago Style Veggie Pizza";
         }
 
