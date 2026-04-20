@@ -1,0 +1,8 @@
+package command.remotecontrol;
+
+public class NoCommand implements Command {
+    @Override
+    public void execute() {
+        // do nothing
+    }
+}
