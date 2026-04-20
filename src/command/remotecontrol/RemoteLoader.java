@@ -5,13 +5,16 @@ public class RemoteLoader {
         RemoteControl remoteControl = new RemoteControl();
 
         // devices (receivers)
-        Light livingRoomLight = new Light();
+        Light livingRoomLight = new Light("Living Room");
+        Light kitchenLight = new Light("Kitchen");
         GarageDoor garageDoor = new GarageDoor();
         Stereo stereo = new Stereo();
 
         // light commands
-        LightOnCommand lightOn = new LightOnCommand(livingRoomLight);
-        LightOffCommand lightOff = new LightOffCommand(livingRoomLight);
+        LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
+        LightOffCommand livingRoomLightOff = new LightOffCommand(livingRoomLight);
+        LightOnCommand kitchenLightOn = new LightOnCommand(kitchenLight);
+        LightOffCommand kitchenLightOff = new LightOffCommand(kitchenLight);
 
         // garage commands
         GarageDoorOpenCommand garageOpen = new GarageDoorOpenCommand(garageDoor);
@@ -22,9 +25,10 @@ public class RemoteLoader {
         StereoOffCommand stereoOff = new StereoOffCommand(stereo);
 
         // assign commands to slots
-        remoteControl.setCommand(0, lightOn, lightOff);
-        remoteControl.setCommand(1, garageOpen, garageDown);
-        remoteControl.setCommand(2, stereoOn, stereoOff);
+        remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
+        remoteControl.setCommand(1, kitchenLightOn, kitchenLightOff);
+        remoteControl.setCommand(2, garageOpen, garageDown);
+        remoteControl.setCommand(3, stereoOn, stereoOff);
 
         // visualize remote
         System.out.println(remoteControl);
@@ -38,5 +42,8 @@ public class RemoteLoader {
 
         remoteControl.onButtonWasPushed(2);
         remoteControl.offButtonWasPushed(2);
+
+        remoteControl.onButtonWasPushed(3);
+        remoteControl.offButtonWasPushed(3);
     }
 }

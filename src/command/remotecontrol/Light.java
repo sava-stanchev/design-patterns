@@ -1,11 +1,17 @@
 package command.remotecontrol;
 
 public class Light {
+    private String location;
+
+    public Light(String location) {
+        this.location = location;
+    }
+
     public void on() {
-        System.out.println("Light is ON");
+        System.out.println(location + " light is ON");
     }
 
     public void off() {
-        System.out.println("Light is OFF");
+        System.out.println(location + " light is OFF");
     }
 }
