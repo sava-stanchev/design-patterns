@@ -23,6 +23,10 @@ public class RemoteLoader {
         CeilingFanHighCommand ceilingFanHigh = new CeilingFanHighCommand(ceilingFan);
         CeilingFanMediumCommand ceilingFanMedium = new CeilingFanMediumCommand(ceilingFan);
         CeilingFanOffCommand ceilingFanOff = new CeilingFanOffCommand(ceilingFan);
+        Command[] partyOn = { livingRoomLightOn, stereoOn, ceilingFanHigh };
+        Command[] partyOff = { livingRoomLightOff, stereoOff, ceilingFanOff };
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
 
         // assign commands to slots
         remoteControl.setCommand(0, livingRoomLightOn, livingRoomLightOff);
@@ -31,6 +35,7 @@ public class RemoteLoader {
         remoteControl.setCommand(3, stereoOn, stereoOff);
         remoteControl.setCommand(4, ceilingFanMedium, ceilingFanOff);
         remoteControl.setCommand(5, ceilingFanHigh, ceilingFanOff);
+        remoteControl.setCommand(6, partyOnMacro, partyOffMacro);
 
         System.out.println(remoteControl);
         remoteControl.onButtonWasPushed(0);
@@ -52,6 +57,10 @@ public class RemoteLoader {
         remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(5);
         System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed();
+        System.out.println("\n--- Pushing Macro On---");
+        remoteControl.onButtonWasPushed(6);
+        System.out.println("\n--- Undo Macro ---");
         remoteControl.undoButtonWasPushed();
     }
 }
