@@ -39,21 +39,19 @@ public class RemoteControl {
     }
 
     public String toString() {
-        StringBuilder stringBuff = new StringBuilder();
-        stringBuff.append("\n------ Remote Control ------\n");
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n------ Remote Control ------\n");
 
         for (int i = 0; i < onCommands.length; i++) {
-            stringBuff.append("[slot ").append(i).append("] ")
-                    .append(onCommands[i].getClass().getName())
-                    .append("    ")
-                    .append(offCommands[i].getClass().getName())
-                    .append("\n");
+            sb.append(String.format("[slot %d] %-25s %-25s%n",
+                    i,
+                    onCommands[i].getClass().getSimpleName(),
+                    offCommands[i].getClass().getSimpleName()));
         }
 
-        stringBuff.append("\nundo: ")
-                .append(undoCommand.getClass().getSimpleName())
-                .append("\n");
+        sb.append(String.format("[undo] %s%n",
+                undoCommand.getClass().getSimpleName()));
 
-        return stringBuff.toString();
+        return sb.toString();
     }
 }
