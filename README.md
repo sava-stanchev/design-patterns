@@ -7,10 +7,10 @@ This repository contains implementations for common design patterns.
 ## Creational Patterns
 
 ### Singleton
-Ensures a class has only one instance and provides a global point of access to it.
+Ensures a class has only one instance, and provides a global point of access to it.
 
 ### Factory Method
-Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+Defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
 ### Abstract Factory
 Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
@@ -20,23 +20,23 @@ Provides an interface for creating families of related or dependent objects with
 ## Structural Patterns
 
 ### Adapter
-Converts the interface of a class into another interface the client expects.
+Converts the interface of a class into another interface the clients expect. Adapter lets classes work together that couldn’t otherwise because of incompatible interfaces.
 
 ### Facade
-Provides a unified interface to a set of interfaces in a subsystem, making the subsystem easier to use.
+Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
 
 ### Decorator
-Attaches additional responsibilities to an object dynamically. Provides a flexible alternative to subclassing.
+Attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
 ---
 
 ## Behavioral Patterns
 
 ### Strategy
-Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
 ### Observer
-Defines a one-to-many dependency between objects so that when one object changes state, all dependents are notified and updated automatically.
+Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.
 
 ### Command
-Encapsulates a request as an object, allowing parameterization of clients with different requests, queuing or logging of requests, and support for undoable operations.
+Encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.
