@@ -40,3 +40,6 @@ Defines a one-to-many dependency between objects so that when one object changes
 
 ### Command
 Encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.
+
+### Template Method
+Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm’s structure.
