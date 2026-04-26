@@ -13,9 +13,7 @@ public class Main {
         // ArrayList
         for (int i = 0; i < breakfastItems.size(); i++) {
             MenuItem menuItem = breakfastItems.get(i);
-            System.out.print(menuItem.getName() + " ");
-            System.out.println(menuItem.getPrice() + " ");
-            System.out.println(menuItem.getDescription());
+            printMenuItem(menuItem);
         }
 
         // Array
@@ -23,10 +21,14 @@ public class Main {
             MenuItem menuItem = lunchItems[i];
 
             if (menuItem != null) {
-                System.out.print(menuItem.getName() + " ");
-                System.out.println(menuItem.getPrice() + " ");
-                System.out.println(menuItem.getDescription());
+                printMenuItem(menuItem);
             }
         }
+    }
+
+    private static void printMenuItem(MenuItem menuItem) {
+        System.out.print(menuItem.getName() + " ");
+        System.out.println(menuItem.getPrice() + " ");
+        System.out.println(menuItem.getDescription());
     }
 }
