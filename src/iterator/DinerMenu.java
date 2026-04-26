@@ -27,8 +27,6 @@ public class DinerMenu {
                 "A hot dog, with sauerkraut, relish, onions, topped with cheese",
                 false,
                 3.05);
-
-        // more items can be added here
     }
 
     public void addItem(String name, String description,
@@ -45,5 +43,9 @@ public class DinerMenu {
 
     public MenuItem[] getMenuItems() {
         return menuItems;
+    }
+
+    public Iterator createIterator() {
+        return new DinerMenuIterator(menuItems);
     }
 }
