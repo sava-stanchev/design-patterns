@@ -2,6 +2,7 @@ package iterator;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class PancakeHouseMenu {
     List<MenuItem> menuItems;
@@ -36,7 +37,7 @@ public class PancakeHouseMenu {
         menuItems.add(menuItem);
     }
 
-    public Iterator createIterator() {
-        return new PancakeHouseIterator(menuItems);
+    public Iterator<MenuItem> createIterator() {
+        return menuItems.iterator();
     }
 }
