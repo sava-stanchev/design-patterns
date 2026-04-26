@@ -1,28 +1,24 @@
 package iterator;
 
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-        List<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
-
         DinerMenu dinerMenu = new DinerMenu();
-        MenuItem[] lunchItems = dinerMenu.getMenuItems();
 
-        // ArrayList
-        for (int i = 0; i < breakfastItems.size(); i++) {
-            MenuItem menuItem = breakfastItems.get(i);
+        Iterator breakfastIterator = pancakeHouseMenu.createIterator();
+        Iterator lunchIterator = dinerMenu.createIterator();
+
+        System.out.println("MENU\n----\nBREAKFAST");
+        printMenu(breakfastIterator);
+
+        System.out.println("\nLUNCH");
+        printMenu(lunchIterator);
+    }
+
+    private static void printMenu(Iterator iterator) {
+        while (iterator.hasNext()) {
+            MenuItem menuItem = iterator.next();
             printMenuItem(menuItem);
-        }
-
-        // Array
-        for (int i = 0; i < lunchItems.length; i++) {
-            MenuItem menuItem = lunchItems[i];
-
-            if (menuItem != null) {
-                printMenuItem(menuItem);
-            }
         }
     }
 
