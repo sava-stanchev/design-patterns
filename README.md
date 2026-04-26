@@ -28,6 +28,9 @@ Provides a unified interface to a set of interfaces in a subsystem. Facade defin
 ### Decorator
 Attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
 
+### Composite
+Allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
+
 ---
 
 ## Behavioral Patterns
