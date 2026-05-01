@@ -1,6 +1,10 @@
 package state.gumballmachine;
 
-public class GumballMachine {
+import proxy.gumballmonitor.GumballMachineRemote;
+
+import java.rmi.RemoteException;
+
+public class GumballMachine implements GumballMachineRemote {
     State soldOutState;
     State noQuarterState;
     State hasQuarterState;
@@ -73,21 +77,24 @@ public class GumballMachine {
         }
     }
 
-    public int getCount() {
-        return count;
-    }
-
     public void refill(int count) {
         this.count += count;
         System.out.println("Machine refilled. New count: " + this.count);
         state.refill();
     }
 
-    public String getLocation() {
+    @Override
+    public int getCount() throws RemoteException {
+        return count;
+    }
+
+    @Override
+    public String getLocation() throws RemoteException {
         return location;
     }
 
-    public String getStateName() {
-        return state.getClass().getSimpleName();
+    @Override
+    public State getState() throws RemoteException {
+        return state;
     }
 }
