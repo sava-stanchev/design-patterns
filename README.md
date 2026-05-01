@@ -31,6 +31,9 @@ Attaches additional responsibilities to an object dynamically. Decorators provid
 ### Composite
 Allows you to compose objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
+### Proxy
+Provides a surrogate or placeholder for another object to control access to it.
+
 ---
 
 ## Behavioral Patterns
