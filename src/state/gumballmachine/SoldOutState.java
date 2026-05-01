@@ -1,7 +1,7 @@
 package state.gumballmachine;
 
 public class SoldOutState implements State {
-    transient GumballMachine gumballMachine;
+    GumballMachine gumballMachine;
 
     public SoldOutState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
