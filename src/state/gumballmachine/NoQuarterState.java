@@ -1,10 +1,6 @@
 package state.gumballmachine;
 
-import java.io.Serial;
-
 public class NoQuarterState implements State {
-    @Serial
-    private static final long serialVersionUID = 2L;
     transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {

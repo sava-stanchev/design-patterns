@@ -1,17 +1,15 @@
 package proxy.gumballmonitor;
 
-import state.gumballmachine.GumballMachine;
-
 public class GumballMonitor {
-    GumballMachine machine;
+    private final GumballMachineRemote machine;
 
-    public GumballMonitor(GumballMachine machine) {
+    public GumballMonitor(GumballMachineRemote machine) {
         this.machine = machine;
     }
 
     public void report() {
-        System.out.println("Gumball Machine: " + machine.getLocation());
-        System.out.println("Current inventory: " + machine.getCount() + " gumballs");
-        System.out.println("Current state: " + machine.getStateName());
+        System.out.println("Location: " + machine.getLocation());
+        System.out.println("Count: " + machine.getCount());
+        System.out.println("State: " + machine.getState());
     }
 }
