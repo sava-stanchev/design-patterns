@@ -73,4 +73,10 @@ public class GumballMachine {
     public int getCount() {
         return count;
     }
+
+    public void refill(int count) {
+        this.count += count;
+        System.out.println("Machine refilled. New count: " + this.count);
+        state.refill();
+    }
 }
