@@ -9,8 +9,11 @@ public class GumballMachine {
 
     State state;
     int count = 0;
+    String location;
 
-    public GumballMachine(int numberGumballs) {
+    public GumballMachine(String location, int numberGumballs) {
+        this.location = location;
+
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
@@ -78,5 +81,13 @@ public class GumballMachine {
         this.count += count;
         System.out.println("Machine refilled. New count: " + this.count);
         state.refill();
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getStateName() {
+        return state.getClass().getSimpleName();
     }
 }

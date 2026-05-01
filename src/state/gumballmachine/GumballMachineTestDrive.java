@@ -2,7 +2,7 @@ package state.gumballmachine;
 
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
-        GumballMachine machine = new GumballMachine(2);
+        GumballMachine machine = new GumballMachine("Sofia Mall", 2);
 
         machine.insertQuarter();
         machine.turnCrank();
